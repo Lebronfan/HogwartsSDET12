@@ -21,7 +21,7 @@ class AddMember(BasePage):
         return [int(x) for x in content.split('/', 1)]
 
     def get_member(self, value):
-        self.waif_for_click((By.CSS_SELECTOR, ".ww_checkbox"))
+        self.wait_for_click((By.CSS_SELECTOR, ".ww_checkbox"))
         cur_page, total_page = self.update_page()
         while True:
             elements = self.finds(By.CSS_SELECTOR, '.member_colRight_memberTable_td:nth-child(2)')
