@@ -1,6 +1,6 @@
-from time import sleep
-
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 from selenium_wework_main.page.add_member import AddMember
 from selenium_wework_main.page.base_page import BasePage
@@ -13,6 +13,6 @@ class Main(BasePage):
         # click add member
         # self.find(By.CSS_SELECTOR, '.index_service_cnt_itemWrap:nth-child(1)').click()
         self.find(By.ID, 'menu_contacts').click()
-        sleep(2)
+        self.waif_for_click((By.CSS_SELECTOR, '.js_has_member>div:nth-child(1)>a:nth-child(2)'))
         self.find(By.CSS_SELECTOR, '.js_has_member>div:nth-child(1)>a:nth-child(2)').click()
         return AddMember(self._driver)
