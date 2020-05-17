@@ -17,3 +17,7 @@ class AddMember:
         self._driver.find_element(By.CSS_SELECTOR, '.js_btn_save').click()
         sleep(5)
         return True
+
+    def get_member(self):
+        elements = self._driver.find_elements(By.CSS_SELECTOR, '.member_colRight_memberTable_td:nth-child(2)')
+        return [element.get_attribute("title") for element in elements]

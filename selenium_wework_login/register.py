@@ -8,7 +8,7 @@ class Register:
     def __init__(self, driver: WebDriver):
         self._driver = driver
 
-    def register(self):
+    def register_true(self):
         # send content
         # click element
         sleep(2)
@@ -17,4 +17,3 @@ class Register:
         sleep(5)
         self._driver.quit()
         return True
-

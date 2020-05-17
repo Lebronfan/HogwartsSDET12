@@ -1,3 +1,5 @@
+from time import sleep
+
 from selenium_wework_main.page.main import Main
 
 
@@ -6,4 +8,7 @@ class TestAddMember:
         self.main = Main()
 
     def test_addmember(self):
-        assert self.main.goto_add_member().add_member()
+        add_member = self.main.goto_add_member()
+        add_member.add_member()
+        sleep(2)
+        assert "abcdefffff" in add_member.get_member()
